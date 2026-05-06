@@ -1,0 +1,117 @@
+<style>body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+}
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 24px;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+select,
+input[type="file"],
+button {
+  font: inherit;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+}
+
+button {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.drop-area {
+  margin-bottom: 20px;
+  padding: 36px 20px;
+  border: 3px dashed #bbb;
+  border-radius: 16px;
+  text-align: center;
+  background: #fff;
+  transition: 0.2s;
+}
+
+.drop-area.dragover {
+  border-color: #0078d4;
+  background: #eaf5ff;
+}
+
+.drop-area p {
+  margin: 6px 0;
+}
+
+.preview-wrap {
+  padding: 16px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+canvas {
+  max-width: 100%;
+  max-height: 70vh;
+  background: #ddd;
+  border: 1px solid #ccc;
+}
+
+
+.note {
+  font-size: 13px;
+  color: #666;
+}
+
+.preview-wrap {
+  position: relative;
+}
+
+.download-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.download-icon:disabled {
+  display: none;
+  /* 画像がないときは隠す場合 */
+}

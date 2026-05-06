@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>画像リサイズツール</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="app">
+    <h1>画像リサイズツール</h1>
+
+    <section class="controls">
+      <input id="fileInput" type="file" accept="image/*" hidden>
+
+      <label>
+        アスペクト比
+        <select id="ratioSelect"></select>
+      </label>
+
+      <label>
+        背景
+        <select id="backgroundSelect">
+          <option value="white">白一色</option>
+          <option value="black">黒一色</option>
+          <option value="topLeft">画像左上のピクセル色</option>
+          <option value="blur">画像をぼかして背景にする</option>
+        </select>
+      </label>
+
+      <label>
+        出力サイズ
+        <select id="sizeSelect">
+          <option value="1200">長辺 1200px</option>
+          <option value="1600" selected>長辺 1600px</option>
+          <option value="1920">長辺 1920px</option>
+          <option value="2560">長辺 2560px</option>
+        </select>
+      </label>
+
+      <label>
+        保存形式
+        <select id="formatSelect">
+          <option value="image/png" selected>PNG</option>
+          <option value="image/jpeg">JPEG</option>
+          <option value="image/webp">WebP</option>
+          <option value="image/avif">AVIF</option>
+        </select>
+      </label>
+
+    </section>
+
+    <section id="dropArea" class="drop-area">
+      <p><strong>ここに画像をドラッグ＆ドロップ</strong> または <a id="uploadLink" href="#">アップロード</a></p>
+      <p>画像ファイルを選択・画像をクリップボードから貼り付けできます。</p>
+      <p class="note">Ctrl + V で画像のペーストに対応しています。</p>
+    </section>
+
+    <section class="preview-wrap">
+      <button id="downloadButton" class="download-icon" title="画像をダウンロード" disabled>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" x2="12" y1="15" y2="3"></line>
+        </svg>
+      </button>
+      <canvas id="canvas"></canvas>
+    </section>
+  </main>
+  <script src="main.js"></script>
+</body>
+
+</html>
